@@ -36,6 +36,8 @@ class Stack{
                 cout<<"stack is empty"<<endl;
             }
             else{
+                cout<<"popped number is: "<<this->arr[top]<<endl;
+                this->arr[top]=0;
                 this->top--;
             }
 
@@ -62,7 +64,7 @@ class Stack{
             }
         }
         void print(){
-            if(this->top == -1 or this->top == size-1){
+            if(this->top == -1 or this->top == size){
                 cout<<"not possible"<<endl;
             }else{
                 for (int i = 0 ; i < size ; i++){
