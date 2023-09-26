@@ -54,6 +54,8 @@ class Time{
             cout<<"Change Seconds: "<<endl;
             cin>>sec;
         }
+
+        
 };
 
 int main(){
