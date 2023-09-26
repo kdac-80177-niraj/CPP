@@ -72,6 +72,10 @@ class Stack{
                 }
             }
         }
+
+        void clear(){
+            delete[] arr;
+        }
 };
 
 enum Emenu{
@@ -81,7 +85,8 @@ enum Emenu{
     PEEK,
     ISEMPTY,
     ISFULL,
-    PRINT
+    PRINT,
+    CLEAR
 };
 
 Emenu menu(){
@@ -94,6 +99,7 @@ Emenu menu(){
     cout<<"4. ISEMPTY."<<endl;
     cout<<"5. ISFULL."<<endl;
     cout<<"6. PRINT."<<endl;
+    cout<<"7. CLEAR."<<endl;
     cout<<"Enter your choice: "<<endl;
     cin>>choice;
     cout<<"***********************************"<<endl;
@@ -140,6 +146,13 @@ int main(){
             case PRINT:
                 stack.print();
                 break;
+            case CLEAR:
+                stack.clear();
+                break;
+            default:
+                cout<<"Wrong choice";
+                break;
+
         }
     }
     cout<<"thank you for choosing"<<endl;
