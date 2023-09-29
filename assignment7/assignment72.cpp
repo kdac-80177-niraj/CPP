@@ -48,7 +48,7 @@ class book:public sell{
             return this->author;
         }
         int getPrice(){
-            return this->price;
+            return (this->price-this->price*0.10);
         }
 
         
@@ -87,7 +87,7 @@ class tape: public sell{
             return this->artist;
         }
         int getPrice(){
-            return this->price;
+            return (this->price-this->price*0.5);
         }
 
 };
