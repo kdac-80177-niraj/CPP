@@ -183,5 +183,8 @@ int main()
     //  Salesman s;
     // s.accept();
     // s.display();
+    // Employee e;
+    // e.accept();
+    // e.display();
     return 0;
 }
