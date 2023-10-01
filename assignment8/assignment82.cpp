@@ -9,7 +9,7 @@ class Stack{
         int *arr;
         int a;
     public:
-        Stack(int sz){
+        Stack(){
             this->top = -1;
             if(size != 0){
                 arr = new int[size];
@@ -19,24 +19,34 @@ class Stack{
                 this->size = SIZE;
             }
         }
-        Stack(Stack &s){
+        Stack(int sz){
+            this->top = -1;
             if(size != 0){
                 arr = new int[size];
-                this->size = s.size;
+                this->size = size;
             }else{
                 arr = new int[SIZE];
                 this->size = SIZE;
             }
+
+        }
+        Stack(Stack &s){
             this->top = s.top;
-            this->arr = s.arr;
-            this->a = s.a;
+            this->size = s.size;
+            this->arr = new int[size];
+            for(int i = 0 ; i <= top ; i++){
+                this->arr[i] = s.arr[i];
+            }
+
         }
 
         void operator=(Stack s){
-            this->arr = s.arr;
             this->top = s.top;
             this->size = s.size;
-            this->a = s.a;
+            this->arr = new int[size];
+            for(int i = 0 ; i <= top ; i++){
+                this->arr[i] = s.arr[i];
+            }
         }
 
         void push(){
@@ -94,87 +104,17 @@ class Stack{
             delete[] arr;
         }
 };
-enum Emenu{
-    EXIT,
-    PUSH,
-    POP,
-    PEEK,
-    ISEMPTY,
-    ISFULL,
-    PRINT,
-    CLEAR
-};
-
-Emenu menu(){
-    int choice;
-    cout<<"**********************************"<<endl;
-    cout<<"0. EXIT."<<endl;
-    cout<<"1. PUSH."<<endl;
-    cout<<"2. POP."<<endl;
-    cout<<"3. PEEK."<<endl;
-    cout<<"4. ISEMPTY."<<endl;
-    cout<<"5. ISFULL."<<endl;
-    cout<<"6. PRINT."<<endl;
-    cout<<"7. CLEAR."<<endl;
-    cout<<"Enter your choice: "<<endl;
-    cin>>choice;
-    cout<<"***********************************"<<endl;
-    return Emenu(choice);
-}
 
 int main(){
-    int size;
-    cout<<"Enter size: ";
-    cin>>size;
-    /*Stack s(6);
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    s.push(4);
-    s.push(5);
-    s.push(6);
-    s.push(7);
-    s.pop();
-    s.print();*/
-
-    Stack stack1(size);
-    Stack stack2(size);
-    stack2 = stack1;
-    Emenu choice;
-    while((choice=menu())!=EXIT){
-        switch(choice){
-            case EXIT:
-                cout<<"exiting........."<<endl;
-                break;
-            case PUSH:
-                stack1.push();
-                break;
-            case POP:
-                stack1.pop();
-                break;
-            case PEEK:
-                stack1.peek();
-                break;
-            case ISEMPTY:
-                stack1.isEmpty();
-                break;
-            case ISFULL:
-                stack1.isFull();
-                break;
-            case PRINT:
-                stack1.print();
-                break;
-            case CLEAR:
-                stack1.clear();
-                break;
-            default:
-                cout<<"Wrong choice";
-                break;
-
-        }
-    }
-    stack2.pop();
-    stack2.print();
-    cout<<"thank you for choosing"<<endl;
-    return 0;
+    Stack s1;
+    s1.push();
+    s1.push();
+    s1.push();
+    s1.print();
+    Stack s2;
+    s2 = s1;
+    s2.print();
+    s1.pop();
+    s2.print();
+    s1.print();
 }
