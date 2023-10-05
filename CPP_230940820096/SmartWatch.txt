@@ -1,0 +1,14 @@
+
+Boat,2300,Nirvana,300
+***********************************
+Name: Boat
+Price: 3000
+Operating System: nirvana
+Batter: 300 MAH
+***********************************
+***********************************
+Name: aljsydb
+Price: 600
+Operating System: nabncac
+Batter: 300 MAH
+***********************************
